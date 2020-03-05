@@ -11,7 +11,11 @@ router.get("/:id", (req, res) => {
   db.query(
     `SELECT * FROM genres where id = ${req.params.id}`,
     (err, results) => {
-      res.send(results);
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(results);
+      }
     }
   );
 });
