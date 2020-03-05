@@ -6,7 +6,7 @@ router.get("/", (req, res) => {
   let value = Object.values(req.query)[0];
   let SQL = "";
   if (!key) {
-    SQL = `SELECT songs.id as song_id, genres.name as genre, artists.name as artist_name, songs.name as song_name, albums.name as album_name, albums.cover as album_cover, songs.audio FROM songs
+    SQL = `SELECT songs.id as song_id, genres.name as genre, artists.name as artist, songs.name as name, albums.name as album, albums.cover as album_cover, songs.audio FROM songs
     LEFT JOIN albums 
     ON songs.album=albums.id
     LEFT JOIN artists 
@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
     LEFT JOIN genres 
     ON genres.id=songs.genre`;
   } else {
-    SQL = `SELECT songs.id as song_id, genres.name as genre, artists.name as artist_name, songs.name as song_name, albums.name as album_name, albums.cover as album_cover, songs.audio FROM songs
+    SQL = `SELECT songs.id as song_id, genres.name as genre, artists.name as artist, songs.name as name, albums.name as album, albums.cover as album_cover, songs.audio FROM songs
     LEFT JOIN albums 
     ON songs.album=albums.id
     LEFT JOIN artists 
