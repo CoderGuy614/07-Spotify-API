@@ -3,7 +3,7 @@ const db = require("../db");
 
 router.get("/", (req, res) => {
   db.query(
-    `SELECT albums.id as album_id ,artists.name as artist_name, albums.name as album_name, albums.cover as album_cover FROM albums 
+    `SELECT albums.id as album_id ,artists.name as artist, albums.name as name, albums.cover as cover FROM albums 
     LEFT JOIN artists
     ON artists.id=albums.artist
     `,
