@@ -1,4 +1,4 @@
-How to get your local SequelPro DB data into a Heroku SQL Database:
+<!-- How to get your local SequelPro DB data into a Heroku SQL Database:
 
 1. Add your project API to Heroku
 2. In Heroku, click on the "Resources" tab
@@ -28,8 +28,8 @@ database: "heroku_xxxxxxxx"
 });
 
 10. Remember to push your changes to GitHub since you modified the .db file.
-11. Go into SequelPro and choose File ---> New Connection.
+11. Go into SequelPro and choose File  New Connection.
 12. enter in the same host / username / pw that you used in .db. Port can be left as default (3306)
 13. Check that SequelPro can connect to your Heroku Database.
 14. Export the data in your local database as a single SQL file
-15. import the SQL file into the Heroku DB.
+15. import the SQL file into the Heroku DB. -->
