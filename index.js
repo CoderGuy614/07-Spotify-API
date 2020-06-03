@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-cors({ credentials: true, origin: true });
+app.use(cors({ credentials: true, origin: true }));
 
 // Routes
 app.use("/artists", require("./controllers/artists"));
