@@ -29,11 +29,10 @@ app.use(
 
 app.use(
   cors({
-    credentials: true,
     origin: "https://spotify-client-jlutz.herokuapp.com",
   })
 );
-// app.options("*", cors());
+app.options("*", cors());
 
 // Routes
 app.use("/artists", require("./controllers/artists"));
