@@ -1,8 +1,8 @@
 // Require
 const express = require("express");
 const bodyParser = require("body-parser");
-require("dotenv").config();
 const cors = require("cors");
+require("dotenv").config();
 
 // App
 const app = express();
@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors());
+cors({ credentials: true, origin: true });
 
 // Routes
 app.use("/artists", require("./controllers/artists"));
