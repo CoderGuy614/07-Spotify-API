@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors({ credentials: true }));
+app.use(cors());
 
 // Routes
 app.use("/artists", require("./controllers/artists"));
@@ -20,7 +20,7 @@ app.use("/genres", require("./controllers/genres"));
 app.use("/pay", require("./controllers/pay"));
 
 // Server
-app.listen(process.env.PORT, err => {
+app.listen(process.env.PORT, (err) => {
   err
     ? () => {
         throw err;
