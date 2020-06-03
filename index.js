@@ -8,15 +8,20 @@ require("dotenv").config();
 const app = express();
 
 //Cors Options
-const corsOptions = {
-  origin: "https://spotify-client-jlutz.herokuapp.com",
-  optionsSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: "https://spotify-client-jlutz.herokuapp.com",
+//   optionsSuccessStatus: 200,
+// };
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://spotify-client-jlutz.herokuapp.com",
+  })
+);
 // app.options("*", cors());
 
 // Routes
