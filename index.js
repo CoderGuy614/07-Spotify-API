@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors({ credentials: true, origin: true }));
+app.use(cors());
 app.options("*", cors());
 
 // Routes
