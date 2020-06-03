@@ -11,6 +11,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors({ credentials: true, origin: true }));
+app.options("*", cors());
 
 // Routes
 app.use("/artists", require("./controllers/artists"));
