@@ -2,6 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 require("dotenv").config();
 
 // App
@@ -16,6 +17,16 @@ const app = express();
 // Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.use(
+  "*",
+  createProxyMiddleware({
+    target: "https://spotify-client-jlutz.herokuapp.com",
+    secure: false,
+    changeOrigin: true,
+  })
+);
+
 app.use(
   cors({
     credentials: true,
